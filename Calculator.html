@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Shanu Kumar 113</title>
+ <style>
+ body {
+ font-family: Arial, sans-serif;
+ background-color: #f2f2f2;
+ text-align: center;
+ }
+ .calculator {
+ max-width: 300px;
+ margin: 0 auto;
+ background-color: #fff;
+ border-radius: 5px;
+ box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+ padding: 20px;
+ }
+ .calculator input[type="text"] {
+ width: 100%;
+ padding: 10px;
+ margin-bottom: 10px;
+ border: 1px solid #ccc;
+ border-radius: 4px;
+ font-size: 18px;
+ text-align: right;
+ }
+ .calculator button {
+ width: 50px;
+ padding: 10px;
+ margin: 5px;
+ background-color: #007bff;
+ color: #fff;
+ border: none;
+ border-radius: 4px;
+ cursor: pointer;
+ font-size: 18px;
+ }
+ .calculator button:hover {
+ background-color: #0056b3;
+ }
+ .calculator button.equal {
+    background-color: #28a745;
+ }
+ </style>
+ <style>
+ .container{
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ height: 100vh;
+ align-items: center;
+ }
+ body {
+ font-family: Arial, sans-serif;
+ background-color: #f2f2f2;
+ text-align: center;
+
+ }
+ .calculator {
+ max-width: 300px;
+ margin: 0 auto;
+ background-color: #fff;
+ border-radius: 5px;
+ box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+ padding: 20px;
+ }
+ .calculator input[type="text"] {
+ width: 80%;
+ padding: 10px;
+ margin-bottom: 10px;
+ border: 1px solid #ccc;
+ border-radius: 4px;
+ font-size: 18px;
+ text-align: right;
+ }
+ .calculator button {
+ width: 50px;
+ padding: 10px;
+ margin: 5px;
+ background-color: #007bff;
+ color: #fff;
+ border: none;
+ border-radius: 4px;
+ cursor: pointer;
+ font-size: 18px;
+ }
+ .calculator button:hover {
+ background-color: #0056b3;
+ }
+ .calculator button.equal {
+ background-color: #28a745;
+ }
+ .footer{
+    background-color: darkolivegreen;
+ color: white;
+ padding: 20px;
+ border-radius: 5px;
+ width: 300px;
+ margin-top: 10px;
+ }
+ </style>
+</head>
+ <body>
+ <div class="container">
+ <div class="calculator">
+ <input type="text" id="result" readonly>
+
+ <button onclick="appendValue('1')">1</button>
+ <button onclick="appendValue('2')">2</button>
+ <button onclick="appendValue('3')">3</button>
+ <button onclick="appendValue('+')">+</button>
+ <br>
+ <button onclick="appendValue('4')">4</button>
+ <button onclick="appendValue('5')">5</button>
+ <button onclick="appendValue('6')">6</button>
+ <button onclick="appendValue('-')">-</button>
+ <br>
+ <button onclick="appendValue('7')">7</button>
+ <button onclick="appendValue('8')">8</button>
+ <button onclick="appendValue('9')">9</button>
+ <button onclick="appendValue('')">*</button>
+ <br>
+ <button onclick="appendValue('0')">0</button>
+ <button onclick="appendValue('.')">.</button>
+ <button onclick="calculate()">=</button>
+ <button onclick="appendValue('/')">/</button>
+ <br>
+ <button onclick="calculateSquareRoot()">√</button>
+ <button onclick="calculatePower()">^</button>
+ <button onclick="calculateCosine()">cos</button>
+ <button onclick="calculateSine()">sin</button>
+ <br>
+ <button onclick="calculateTangent()">tan</button>
+ <button onclick="calculateExponential()">exp</button>
+ <button onclick="clearResult()">C</button>
+ </div>
+ <div class="footer">By Shanu Kumar 113 ITC</div>
+
+ </div>
+
+ <script>
+ function appendValue(value) {
+ document.getElementById("result").value += value;
+ }
+ function calculate() {
+ var expression = document.getElementById("result").value;
+ var result = eval(expression);
+ document.getElementById("result").value = result;
+ }
+
+ function calculateSquareRoot() {
+ var value = parseFloat(document.getElementById("result").value);
+ var result = Math.sqrt(value);
+ document.getElementById("result").value = result;
+ }
+
+ function calculatePower() {
+ var value = parseFloat(document.getElementById("result").value);
+ var result = Math.pow(value, 2);
+ document.getElementById("result").value = result;
+ }
+
+ function calculateCosine() {
+ var value = parseFloat(document.getElementById("result").value);
+ var result = Math.cos(value);
+ document.getElementById("result").value = result;
+ }
+
+ function calculateSine() {
+ var value = parseFloat(document.getElementById("result").value);
+ var result = Math.sin(value);
+ document.getElementById("result").value = result;
+ }
+
+ function calculateTangent() {
+ var value = parseFloat(document.getElementById("result").value);
+ var result = Math.tan(value);
+ document.getElementById("result").value = result;
+ }
+
+ function calculateExponential() {
+ var value = parseFloat(document.getElementById("result").value);
+ var result = Math.exp(value);
+ document.getElementById("result").value = result;
+ }
+
+ function clearResult() {
+ document.getElementById("result").value = "";
+ }
+ </script>
+ </body>
+</html>
